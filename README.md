@@ -1,2 +1,2 @@
-# VetClinicWindowsForm
-VetClinicWindowsForm
+# VetClinicWindowsForm С#
+Приложение с базой данных для учета ветеринарной клиники
