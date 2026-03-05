@@ -1,0 +1,83 @@
+using sav_vetklinik.AccountDataSetTableAdapters;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace sav_vetklinik
+{
+    public partial class RegisterForm : Form
+    {
+        public RegisterForm()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private bool IsValidPassword(string password)
+        {
+            foreach (char c in password)
+            {
+                if (!char.IsLetterOrDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            bool hasError = false;
+            if (tbPassword.Text != tbPasReload.Text)
+            {
+                errorProvider1.SetError(tbPassword, "Пароли не совпадают. Пожалуйста, попробуйте снова.") ;
+                MessageBox.Show("Пароли не совпадают. Пожалуйста, попробуйте снова.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbLogin.Text))
+            {
+                errorProvider1.SetError(tbLogin, "Логин не может быть пустым.");
+                MessageBox.Show("Логин не может быть пустым.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                errorProvider1.SetError(tbPassword, "Пароль не может быть пустым.");
+                MessageBox.Show("Пароль не может быть пустым.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbPasReload.Text))
+            {
+                errorProvider1.SetError(tbPasReload, "Подтвердите пароль.");
+                hasError = true;
+            }
+            if (!IsValidPassword(tbPassword.Text))
+            {
+                MessageBox.Show("Пароль содержит недопустимые символы. Пожалуйста, используйте только буквы и цифры.");
+                return;
+            }
+            if (hasError)
+            {
+                return;
+            }
+            DataRow nRow = accountDataSet.Аккаунты.NewRow();
+            nRow[1] = tbLogin.Text;
+            nRow[2] = tbPassword.Text;
+            accountDataSet.Аккаунты.Rows.Add(nRow);
+            аккаунтыBindingSource.ResetBindings(false);
+            Validate();
+            аккаунтыBindingSource.EndEdit();
+            аккаунтыTableAdapter.Update(accountDataSet.Аккаунты);
+            MessageBox.Show("Аккаунт Зарегестрирован!");
+        }
+    }
+}
