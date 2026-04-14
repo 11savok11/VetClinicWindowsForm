@@ -26,5 +26,40 @@ namespace sav_vetklinik
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TabDoctors af = new TabDoctors();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TabPacients af = new TabPacients();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TabAccount af = new TabAccount();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TabZakaz af = new TabZakaz();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            TabHistory af = new TabHistory();
+            af.Owner = this;
+            af.Show();
+        }
     }
 }
