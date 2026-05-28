@@ -1,7 +1,10 @@
 # VetClinicWindowsForm С#
 Приложение с базой данных для учета ветеринарной клиники
-# Интерфейс авторизации
+# Интерфейс формы авторизации
 <img width="395" height="291" alt="LogFormSav" src="https://github.com/user-attachments/assets/6299a108-d321-43a0-8e34-1c708308e4ac" />
+
+# Интерфейс формы пользователя
+<img width="814" height="352" alt="UserForm" src="https://github.com/user-attachments/assets/3c6fa811-50a1-4ca7-acc4-7d0220f94459" />
 
 
 # Руководство Пользователя
