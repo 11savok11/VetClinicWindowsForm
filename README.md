@@ -6,6 +6,9 @@
 # Интерфейс формы пользователя
 <img width="814" height="352" alt="UserForm" src="https://github.com/user-attachments/assets/3c6fa811-50a1-4ca7-acc4-7d0220f94459" />
 
+# Интерфейс формы администратора
+<img width="679" height="478" alt="AdminForm" src="https://github.com/user-attachments/assets/8166cb07-4a0e-4e78-b927-3bdf582f9530" />
+
 
 # Руководство Пользователя
 
